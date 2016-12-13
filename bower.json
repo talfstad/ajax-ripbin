@@ -1,0 +1,14 @@
+{
+  "name": "ripbin",
+  "version": "1.0.0",
+  "authors": [
+    "Buildcave, LLC"
+  ],
+  "homepage": "www.ripbin.com",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "almond": "^0.3.2"
+  }
+}

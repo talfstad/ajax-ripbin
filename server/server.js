@@ -41,6 +41,10 @@ app.use(multer({ dest: './staging' }).any());
 var dbApi = require("./db_api")(app, db);
 require("./routes")(app, dbApi);
 
+//host static files if dev
+if (env == "dev") {
+  app.use(express.static(__dirname + '/../public'));
+}
 
 //create server
 http.globalAgent.maxSockets = app.config.maxSockets;

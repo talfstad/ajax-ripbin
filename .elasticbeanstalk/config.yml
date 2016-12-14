@@ -1,4 +1,6 @@
 branch-defaults:
+  local:
+    environment: ajax-test-ripbin
   master:
     environment: ajax-test-ripbin
 global:

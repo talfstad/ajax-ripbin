@@ -9,25 +9,25 @@ install:
 deploy:
   - provider: elasticbeanstalk
     skip_cleanup: true
-    app: ajax.ripbin.com
+    app: ripbin.com
     env: ajax-test-ripbin
     access_key_id: "AKIAIGEHZO373H6MTW6Q"
     secret_access_key: "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"
     region: us-west-2
     bucket_name: elasticbeanstalk-us-west-2-834835117621
-    path: /ajax.ripbin.com
+    path: /ripbin.com
     zip_file: release-candidate.zip
     on:
       branch: test
   - provider: elasticbeanstalk
     skip_cleanup: true
-    app: ajax.ripbin.com
+    app: ripbin.com
     env: ajax-ripbin
     access_key_id: "AKIAIGEHZO373H6MTW6Q"
     secret_access_key: "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"
     region: us-west-2
     bucket_name: elasticbeanstalk-us-west-2-834835117621
-    path: /ajax.ripbin.com
+    path: /ripbin.com
     zip_file: release-candidate.zip
     on:
       branch: prod

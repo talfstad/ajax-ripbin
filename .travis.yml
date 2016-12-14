@@ -9,7 +9,7 @@ deploy:
     secret_access_key: "u4W2dWg5Du/xeoiLINkNAJN1ht2cT3HOmLDaT1xL"
     bucket: "ripbin"
     acl: public_read
-    region: us-west-2
+    region: us-west-1
     local_dir: public
     upload_dir: test
     cache_control: "max-age=31536000"
@@ -20,7 +20,7 @@ deploy:
     secret_access_key: "u4W2dWg5Du/xeoiLINkNAJN1ht2cT3HOmLDaT1xL"
     bucket: "ripbin"
     acl: public_read
-    region: us-west-2
+    region: us-west-1
     local_dir: public
     upload_dir: prod
     cache_control: "max-age=31536000"

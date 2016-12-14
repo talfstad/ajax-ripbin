@@ -24,9 +24,9 @@ var init = function(env) {
   };
 
   var prod = {
-    loglevel: 'error',
+    loglevel: 'all',
     dbConnectionInfo: _.extend({
-      host: 'ripbin.cynwtdt18kyi.us-west-2.rds.amazonaws.com:3306',
+      host: 'ripbin.cynwtdt18kyi.us-west-2.rds.amazonaws.com',
       user: 'buildcave',
       password: 'Wewillrockyou1986!',
       database: 'prod'

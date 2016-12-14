@@ -12,6 +12,7 @@ var http = require("http");
 var logger = require('morgan');
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
+var cors = require("cors");
 
 //used for new lander upload
 var multer = require('multer');
@@ -20,10 +21,13 @@ var mysql = require("mysql");
 var gzipCompression = require('compression');
 
 var app = express();
+
 app.config = require("./config")(env);
 app.log = require("./logger")(app);
 
 var db = mysql.createPool(app.config.dbConnectionInfo);
+
+app.use(cors());
 
 app.use(gzipCompression());
 
@@ -37,6 +41,8 @@ app.use(bodyParser.urlencoded({
 })); // parse application/x-www-form-urlencoded
 app.use(methodOverride()); // must come after bodyParser
 app.use(multer({ dest: './staging' }).any());
+
+app.options('*', cors());
 
 var dbApi = require("./db_api")(app, db);
 require("./routes")(app, dbApi);

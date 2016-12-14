@@ -5,52 +5,45 @@ var base = {
   maxSockets: 100,
   dbConnectionInfo: {
     multipleStatements: true,
-    connectionLimit: 50
-  },
-  redisConnectionInfo: {
-    port: 6379,
-    db: 0,
-    pass: 'Wewillrockyou1986!',
-    logErrors: false
-  },
-  intercom: {
-    appApiKey: "04f1d02b2516abefc75976e25118609ca21bf8de",
-    appId: "wgf4en1r",
-    admin: "411412" //this is lifen's admin id
+    connectionLimit: 100
   }
 };
 
 var init = function(env) {
+
+  var test = {
+    loglevel: 'all',
+    dbConnectionInfo: _.extend({
+      host: 'ripbin.cynwtdt18kyi.us-west-2.rds.amazonaws.com',
+      user: 'buildcave',
+      password: 'Wewillrockyou1986!',
+      database: 'test'
+    }, base.dbConnectionInfo),
+    port: base.port,
+    maxSockets: base.maxSockets
+  };
+
+  var prod = {
+    loglevel: 'error',
+    dbConnectionInfo: _.extend({
+      host: 'ripbin.cynwtdt18kyi.us-west-2.rds.amazonaws.com:3306',
+      user: 'buildcave',
+      password: 'Wewillrockyou1986!',
+      database: 'prod'
+    }, base.dbConnectionInfo),
+    port: base.port,
+    maxSockets: base.maxSockets
+  };
+
   switch (env) {
     case 'dev':
-      return _.extend({
-        loglevel: 'all',
-        dbConnectionInfo: _.extend({
-          host: 'landerds-app.cynwtdt18kyi.us-west-2.rds.amazonaws.com',
-          user: 'buildcave',
-          password: 'Wewillrockyou1986!',
-          database: 'ripbin_test_db'
-        }, base.dbConnectionInfo),
-        redisConnectionInfo: _.extend({
-          host: '52.39.113.167'
-        }, base.redisConnectionInfo)
-      }, base)
+      return test;
       break;
     case 'prod':
-      return _.extend({
-        loglevel: 'error',
-        dbConnectionInfo: _.extend({
-          host: 'landerds-app.cynwtdt18kyi.us-west-2.rds.amazonaws.com',
-          user: 'buildcave',
-          password: 'Wewillrockyou1986!',
-          database: 'ribin_prod_db'
-        }, base.dbConnectionInfo),
-        redisConnectionInfo: _.extend({
-          host: '10.35.0.166'
-        }, base.redisConnectionInfo)
-      }, base)
+      return prod;
       break;
     default:
+      return test;
       break;
   }
 }

@@ -6,16 +6,17 @@
     "build": "node scripts/build.js"
   },
   "dependencies": {
-    "underscore": "*",
-    "express": "*",
-    "http": "*",
-    "hbs": "*",
-    "morgan": "*",
-    "method-override": "*",
     "body-parser": "*",
     "compression": "*",
+    "cors": "^2.8.1",
+    "express": "*",
+    "hbs": "*",
+    "http": "*",
+    "method-override": "*",
+    "morgan": "*",
+    "multer": "*",
     "mysql": "*",
-    "multer": "*"
+    "underscore": "*"
   },
   "devDependencies": {
     "rsync": "*",

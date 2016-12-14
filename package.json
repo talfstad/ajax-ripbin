@@ -2,6 +2,9 @@
   "name": "Ripbin-Marketing-REST-Server",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "build": "node scripts/build.js"
+  },
   "dependencies": {
     "underscore": "*",
     "express": "*",
@@ -13,5 +16,11 @@
     "compression": "*",
     "mysql": "*",
     "multer": "*"
+  },
+  "devDependencies": {
+    "rsync": "*",
+    "rimraf": "*",
+    "zip-dir": " *",
+    "mkdirp": "*"
   }
 }

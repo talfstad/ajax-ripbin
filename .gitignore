@@ -6,7 +6,6 @@ node_modules
 public/vendor/bower_installed
 
 # Elastic Beanstalk Files
-.elasticbeanstalk/app_versions/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 
@@ -14,5 +13,5 @@ public/vendor/bower_installed
 server/staging
 
 #build
-built
-built.zip
+dist
+release-candidate.zip

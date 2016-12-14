@@ -2,10 +2,10 @@ language: node_js
 node_js:
   - "4"
 before_install:
-  - chmod +x ./scripts/build.js
   - npm install
 install:
-    - node ./scripts/build.js
+  - chmod +x ./scripts/build.js
+  - node ./scripts/build.js
 deploy:
   - provider: elasticbeanstalk
     app: ajax.ripbin.com
@@ -18,5 +18,3 @@ deploy:
     zip_file: release-candidate.zip
     on:
       branch: test
-after_deploy:
-  - node ./scripts/ci/invalidate_test.js
